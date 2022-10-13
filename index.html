@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset=utf-8>
+        <title>Seattle Kraken</title>
+        <meta name="author" content="Kristin Robichaux">
+        <meta name="description" content="starter file">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <script src="Script.js" defer></script>
+        <link rel="stylesheet" href="https://use.typekit.net/joj4qfu.css">
+    </head>
+    <body>
+        <header>
+            <a href="index.html" class="logomain"><img src="Seattle_Kraken_official_logo.svg.png" alt="Official Seattle Kraken Logo" height="110" width="90"></a>
+            <h1>Seattle Kraken</h1>
+            <nav>
+                <h2>Main Navigation</h2>
+                <div>
+                    <ul>
+                        <li><a href="#home">HOME</a></li>
+                        <li><a href="#about">ABOUT</a></li>
+                        <li><a href="#shop">SHOP</a></li>
+                        <li><a href="#contact">CONTACT</a></li>
+                    </ul>
+                </div>
+                <div id="dark-light-buttons"><!-- Add dark mode toggle button -->
+                    <button onclick="darkMode()">Darkmode</button>
+                    <button onclick="lightMode()">LightMode</button>
+                </div>
+            </nav>
+        </header>
+        
+        <main>
+            
+            <div id="top-about">
+                <img src="seattle_kraken_badge.png" alt="Kraken Anniversary Badge" height="400" width="380"><!--image is from https://www.seattlekrakenhockey.com/-->
+                <section id="about">
+                    <h2>The NHL’s 32nd Club</h2>
+                    <p>The city of Seattle is now home to the KRAKEN! We welcome 32,000 passionate and eager fans that have awaited this day! Opening day October 12, 2022 is right around the corner and we can’t wait to get this season started.<br><br>The 2022-23 campaign will kick off with a two-game road trip that will see the Kraken take on two California teams. The team will then return to Seattle to face expansion-rival Vegas Golden Knights in the team's first home game of the season on Saturday, Oct. 15 at 7 p.m. PT at Climate Pledge Arena. </p>
+                    <h3>RELEASE THE KRAKEN</h3>
+                </section>
+            </div>
+            <div id="shop-section-all">
+                <section>
+                    <h2>Shop New Merchandise</h2>
+                </section>
+                <div id="shopping-main"><!-- shop wrapper for product cards -->
+                    <div id="shop">
+                        <!--All clothing descriptions and images are from https://shop.nhl.com/seattle-kraken-->
+                        <section id="product1" class="productCard">
+                            <img src="product_1.jfif" alt="Navy Kraken Jersey">
+                            <h3>Navy Home Jersey</h3>
+                            <p>FanTex: Performance midweight fabric<br><br> A more tailored fit providing improved comfort around the torso and arms. Men's fit.</p>
+                            <p>$205 <label class="label-right">Add to Cart</label><input onclick = "updateSelectedProduct()" type="checkbox" name="add" value="Navy Kraken Jersey $205" id="check1"> </p>
+                        </section>
+                        <section id="product2" class="productCard">
+                            <img src="product_2.jpg" alt="White Kraken Jersey">
+                            <h3>White Away Jersey</h3>
+                            <p>FanTex: An all-new super comfortable soft fabric<br><br>
+                                FanFit: A flattering, shaped silhouette with a mid-length hem. Women's fit.</p>
+                            <p>$205 <label class="label-right">Add to Cart</label> <input type="checkbox" name="add" value="White Kraken Jersey $205" id="check2"></p>
+                        </section>
+                        <section id="product3" class="productCard">
+                            <img src="product_3.jpg" alt="Navy Kraken Logo Sweatshirt with hood">
+                            <h3>Navy Hooded Sweatshirt</h3>
+                            <p>Midweight hoodie suitable for moderate temperatures<br><br>Trim fit hoodie that fits closer to the body. For a looser fit, please size up.</p>
+                            <p>$60 <label class="label-right">Add to Cart</label><input type="checkbox" name="add" value="Navy Hooded Sweatshirt $60" id="check3"> </p>
+                        </section>
+                         <section id="product4" class="productCard">
+                            <img src="product_4.jpg" alt="Gray Kraken Logo Sweatshirt with hood">
+                            <h3>Gray Hooded Sweatshirt</h3>
+                            <p>Midweight hoodie suitable for moderate temperatures<br><br>Trim fit hoodie that fits closer to the body. For a looser fit, please size up.</p>
+                            <p>$60 <label class="label-right">Add to Cart</label><input type="checkbox" name="add" value="Gray Hooded Sweatshirt $60" id="check4"> </p>
+                        </section>
+                         <section id="product5" class="productCard">
+                            <img src="product_5.jpg" alt="Black Sweatshirt with rhinestone logo">
+                            <h3>Black V-Neck Sweatshirt</h3>
+                            <p>Fleece lined Pullover with Rhinestone embellishments<br><br>
+                                Rib-knit cuffs Midweight sweatshirt suitable for moderate temperatures</p>
+                            <p>$80 <label class="label-right">Add to Cart</label><input type="checkbox" name="add" value="Black V-Neck Sweatshirt $80" id="check5"> </p>
+                        </section>
+                        <section id="product6" class="productCard">
+                            <img src="product_6.jpg" alt="Navy Full Zip Hooded Sweatshirt with Logo on chest">
+                            <h3>Navy Full Zip Sweatshirt</h3>
+                            <p>Scuba hood with drawstring and dropped shoulders<br><br>Two front pockets with droptail hem. Rib-knit cuffs with thumbholes</p>
+                            <p>$100 <label class="label-right">Add  to Cart</label><input type="checkbox" name="add" value="Navy Full Zip Sweatshirt $100" id="check6"> </p>
+                        </section>
+                        <section id="total-cart"><!--Shopping Cart -->
+                            <h3>Cart</h3>
+                            <!--selected items appear in unordered list -->
+                            <ul id="shoppingList"> 
+                                <li></li>
+                            </ul>
+                            <!--values are displayed for each item added to the list-->
+                            <ul>
+                                <li id="subTotal">SUBTOTAL</li>
+                                <li id="salesTax">Sales Tax 8.0%</li>
+                                <li id="shipping">Shipping $5.00</li>
+                                <li id="total">Total</li>
+                                <li id="totalAmount">$0.00</li>
+                            </ul>
+                            <button id="checkout" onclick="checkOutAlert()">Check Out</button>
+                        </section>
+                    </div>
+                </div>
+            </div>
+            <div id="contact-area">
+                <div id="contact">
+                    <h3>Contact Us</h3>
+                </div>
+                <form>
+                    <label for="fullName"></label>
+                    <input type="text" id="fullName" name= "fullname" class="default" placeholder="Full Name*">
+                    <label for="email"></label>
+                    <input type="text" id="email" name="email" class="default" placeholder="Email Address">
+                    <label for="phone"></label>
+                    <input type="text" id="phone" name="phone" class="default" placeholder="Phone Number">
+                    <fieldset class="required">
+                        <legend>Preferred Method of Contact*</legend>
+                        <div id="contact-method">
+                            <input type="radio" id="emailRadio" name="Email" value="Email">
+                            <label for="emailRadio">Email</label>
+                            <input type="radio" id="phoneRadio" name="Phone" value="Phone">
+                            <label for="phoneRadio">Phone</label>
+                        </div>
+                    </fieldset>
+                    <input type="submit" id="mySubmit">
+                    <p id="submit"></p>
+                </form>
+                <div id="message-area"><!--Contact Message Text Area -->
+                    <label for="comments"></label>
+                    <textarea name="comments" id="comments" rows="16" cols="60">Write your message here*</textarea>
+                </div>
+            </div>
+            <div>
+                <img id="bottom-img" src="banner_logo.jpg" alt="Seattle Kraken Wordmark" width="1280">
+            </div>
+        </main>
+        <footer>
+            <p>&copy; Kristin Robichaux 2022<br>
+            Arizona State University<br>
+            This website is for educational purposes only.</p>
+        </footer>
+    </body>
+</html>
